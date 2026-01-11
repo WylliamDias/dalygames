@@ -1,12 +1,55 @@
-import { Container } from "@/components/container";
-import { GameProps } from "@/utils/types/game";
 import Image from "next/image";
+import { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Label } from "./components/label";
 import { GameCard } from "@/components/gameCard";
+import { Container } from "@/components/container";
+import { GameProps } from "@/utils/types/game";
 
 interface GameDetailsProps {
   params: Promise<{ gameId: string }>;
+}
+
+interface MetadataParams {
+  params: Promise<{ gameId: string }>;
+}
+
+export async function generateMetadata({ params }: MetadataParams): Promise<Metadata> {
+  try {
+    const { gameId } = await params;
+    if (!gameId) throw new Error('Invalid ID');
+
+    const res = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game&id=${gameId}`, {
+      next: {
+        revalidate: 60
+      }
+    });
+
+    const gameInfo: GameProps = await res.json();
+
+    return {
+      title: gameInfo.title,
+      description: `${gameInfo.description.slice(0, 100)}...`,
+      openGraph: {
+        title: gameInfo.title,
+        images: [gameInfo.image_url]
+      },
+      robots: {
+        index: true,
+        follow: true,
+        nocache: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          noimageindex: true
+        }
+      }
+    };
+  } catch (error) {
+    return {
+      title: 'DalyGame - Descubra jogos incríveis para se divertir.'
+    }
+  }
 }
 
 async function getGameData(gameId: string) {
