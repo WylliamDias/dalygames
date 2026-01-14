@@ -1,3 +1,34 @@
+# TO-DO !!!
+The rest of the information about the project in this README.md is still pending.
+
+# DalyGames
+Simples project...
+
+
+## Homepage
+
+<img width="1659" height="899" alt="image" src="https://github.com/user-attachments/assets/3e7a1db7-7c4c-48e4-af4d-507e98707ae4" />
+<p align="center">
+  <img width="571" height="878" alt="image" src="https://github.com/user-attachments/assets/1cc05a16-bed9-459c-9e21-1ec70bd09684" />
+</p>
+
+
+![MainPageResponsive-Mobile-GIF](https://github.com/user-attachments/assets/9732ca6f-7c1d-4b5e-aeba-8377f6550b67)
+![MainPageResponsive-Desktop-GIF](https://github.com/user-attachments/assets/00639df0-f533-4110-92c0-5a12532ce6ce)
+
+## Search Game
+![Search](https://github.com/user-attachments/assets/0391961a-7dba-45e1-856f-540f38597974)
+
+
+## Game Page
+![GamePage](https://github.com/user-attachments/assets/368ea362-4c05-48c7-88e2-62c68ed45b82)
+
+
+## Profile
+![ProfilePage](https://github.com/user-attachments/assets/1c68f0d8-5023-495f-bfb3-28be721bdb55)
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
